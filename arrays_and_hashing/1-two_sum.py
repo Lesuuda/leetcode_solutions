@@ -29,13 +29,15 @@ You can return the answer in any order.
   -109 <= target <= 109
   Only one valid answer exists.
 """
-from collections import List
+from typing import List
 class Solution:
     def twoSum(self, nums:List[int], target: int) -> List[int]:
         two_sum = {}
         for i, n in enumerate(nums):
             diff = target - n
             if diff in two_sum:
-                return (two_sum[diff], i)
+                return [two_sum[diff], i]
             two_sum[n] = i
         return
+print(Solution().twoSum([3, 2, 4], 6))
+print(Solution().twoSum([2, 7, 11, 15], 9))
